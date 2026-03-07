@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+.svelte-kit/
+build/
+.vercel/
+
+# Environment
+.env
+*.env.local
+
+# Docker
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
