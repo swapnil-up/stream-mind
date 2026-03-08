@@ -1,15 +1,15 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import List
+from pydantic import Field
 
 class Settings(BaseSettings):
-    OPENAI_API_KEY: str = ""
-    DATABASE_URL: str = "sqlite+aiosqlite:///./test.db"
-    JWT_SECRET_KEY: str = "dev-secret-change-me"
-    JWT_ALGORITHM: str = "HS256"
-    JWT_EXPIRE_MINUTES: int = 60
-    BACKEND_CORS_ORIGINS: List[str] = ["http://localhost:5173"]
+    OPENAI_API_KEY: str = Field(...)
+    DATABASE_URL: str = Field(...)
+    JWT_SECRET_KEY: str = Field(...)
+    JWT_ALGORITHM: str = Field(...)
+    JWT_EXPIRE_MINUTES: int = Field(...)
+    BACKEND_CORS_ORIGINS: List[str] = Field(...)
 
-    class Config:
-        env_file = ".env"
+    model_config = SettingsConfigDict(env_file="../.env")
 
 settings = Settings()
